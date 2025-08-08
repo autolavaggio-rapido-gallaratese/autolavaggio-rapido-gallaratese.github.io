@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -11,6 +17,10 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+.logo img {
+  height: 240px; /* Puoi modificare l’altezza a piacere */
 }
 
 nav ul {
@@ -33,12 +43,6 @@ nav a {
   color: white;
   text-align: center;
   padding: 100px 20px;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
 }
 
 section h3 {
@@ -94,4 +98,137 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Centra verticalmente */
+  justify-content: center; /* Centra orizzontalmente */
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Opacità per migliorare leggibilità */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+/* Menu */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header base */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+/* Sfondo quando si scrolla */
+#site-header.scrolled {
+  background-color: #007BFF;
+}
+
+#site-logo {
+  height: 120px;
+  transition: height 0.3s ease;
+}
+
+#site-header.scrolled #site-logo {
+  height: 60px;
+}
+
+/* Menu desktop */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #007BFF;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

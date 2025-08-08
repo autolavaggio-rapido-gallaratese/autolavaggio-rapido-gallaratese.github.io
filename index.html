@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autolavaggio Milano</title>
+    <title>Autolavaggio Rapido Gallaratese</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-    <h1>Autolavaggio Milano</h1>
-    <nav>
+<header id="site-header">
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo del sito" id="site-logo">
+    </div>
+
+    <nav class="main-nav">
         <ul>
+            <li><a href="#home">Home</a></li>
             <li><a href="#servizi">Servizi</a></li>
-            <li><a href="#orari">Orari</a></li>
-            <li><a href="#galleria">Galleria</a></li>
-            <li><a href="#prenotazione">Prenota</a></li>
             <li><a href="#contatti">Contatti</a></li>
         </ul>
     </nav>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
 
+
 <section class="hero">
-    <h2>La tua auto, come nuova</h2>
-    <p>Servizio professionale di lavaggio auto a Milano</p>
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1>Benvenuto nel mio sito</h1>
+        <p>Scopri i miei progetti e le mie passioni</p>
+    </div>
 </section>
 
-<section id="servizi">
+<section id="servizi" class="centered">
     <h3>Servizi</h3>
     <ul>
         <li>Lavaggio esterno</li>
@@ -35,13 +46,13 @@
     </ul>
 </section>
 
-<section id="orari">
+<section id="orari" class="centered">
     <h3>Orari di apertura</h3>
     <p>Lunedì - Sabato: 8:00 - 19:00</p>
     <p>Domenica: Chiuso</p>
 </section>
 
-<section id="galleria">
+<section id="galleria" class="centered">
     <h3>Galleria fotografica</h3>
     <div class="gallery">
         <img src="https://source.unsplash.com/300x200/?carwash" alt="Lavaggio auto 1" />
@@ -51,12 +62,12 @@
     </div>
 </section>
 
-<section id="prenotazione">
+<section id="prenotazione" class="centered">
     <h3>Prenota il tuo lavaggio</h3>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJY69Ni7ZghMadZz0Wvwa_UwRh0vOP8WfEbzg7rPdLhHOQ4g/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
 </section>
 
-<section id="contatti">
+<section id="contatti" class="centered">
     <h3>Contatti</h3>
     <p>📍 Via Roma 123, Milano</p>
     <p>📞 +39 02 12345678</p>
@@ -67,7 +78,28 @@
 </section>
 
 <footer>
-    <p>&copy; 2025 Autolavaggio Milano. Tutti i diritti riservati.</p>
+    <p>&copy; 2025 Autolavaggio Rapido Gallaratese. Tutti i diritti riservati.</p>
 </footer>
 </body>
 </html>
+
+<script>
+    const header = document.getElementById('site-header');
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.main-nav');
+
+    // Cambia sfondo al scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Toggle menu mobile
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+</script>
+
