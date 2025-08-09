@@ -87,6 +87,7 @@
     const header = document.getElementById('site-header');
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('.main-nav');
+    const navLinks = document.querySelectorAll('.main-nav a');
 
     // Cambia sfondo al scroll
     window.addEventListener('scroll', () => {
@@ -98,8 +99,29 @@
     });
 
     // Toggle menu mobile
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation(); // Impedisce la propagazione del click
       nav.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    // Chiudi menu al click su un link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        hamburger.classList.remove('open');
+      });
+    });
+
+    // Chiudi menu al click fuori dal menu e hamburger
+    document.addEventListener('click', (event) => {
+      const clickedOutside = !nav.contains(event.target) && !hamburger.contains(event.target);
+
+      if (clickedOutside) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('open');
+      }
     });
 </script>
+
 
