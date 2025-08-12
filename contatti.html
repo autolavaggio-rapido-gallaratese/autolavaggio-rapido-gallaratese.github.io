@@ -30,11 +30,11 @@
 <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-        <h1>Contatti</h1>
+        <h1 class="fade-in">Contatti</h1>
     </div>
 </section>
 
-<section>
+<section class="fade-in">
     <form>
         <input type="text" placeholder="Nome">
         <input type="email" placeholder="Email">
@@ -88,4 +88,21 @@
         hamburger.classList.remove('open');
       }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Rimuove l'osservazione dopo l'animazione
+        }
+      });
+    }, {
+      threshold: 0.3 // Parte quando almeno il 30% è visibile
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  });
 </script>

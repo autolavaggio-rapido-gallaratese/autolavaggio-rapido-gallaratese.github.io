@@ -31,30 +31,53 @@
 <section class="hero-home">
     <div class="overlay"></div>
     <div class="hero-content">
-        <h1>Benvenuto nel mio sito</h1>
-        <p>Scopri i miei progetti e le mie passioni</p>
+        <h1 class="fade-in">Benvenuto nel mio sito</h1>
+        <p class="fade-in">Scopri i miei progetti e le mie passioni</p>
     </div>
 </section>
 
-<section id="servizi" class="centered">
-    <h3>Servizi</h3>
-    <ul>
-        <li>Lavaggio esterno</li>
-        <li>Lavaggio interno</li>
-        <li>Lucidatura</li>
-        <li>Sanificazione abitacolo</li>
-    </ul>
+<section id="servizi" class="centered" style="padding: 60px 20px;">
+    <h3 class="fade-in">I nostri servizi</h3>
+    <div class="gallery">
+        <!-- Lavaggio Tunnel -->
+        <div class="servizio fade-in">
+            <h4>Lavaggio Tunnel</h4>
+            <img src="images/lavaggio-tunnel.jpg" alt="Lavaggio Tunnel">
+            <button onclick="location.href='#'">Scopri di più</button>
+        </div>
+
+        <!-- Lavaggio Portale -->
+        <div class="servizio fade-in">
+            <h4>Lavaggio Portale</h4>
+            <img src="images/lavaggio-portale.jpg" alt="Lavaggio Portale">
+            <button onclick="location.href='#'">Scopri di più</button>
+        </div>
+
+        <!-- Lavaggio Piste -->
+        <div class="servizio fade-in">
+            <h4>Lavaggio Piste</h4>
+            <img src="images/lavaggio-piste.jpg" alt="Lavaggio Piste">
+            <button onclick="location.href='#'">Scopri di più</button>
+        </div>
+
+        <!-- Lavanderia -->
+        <div class="servizio fade-in">
+            <h4>Lavanderia</h4>
+            <img src="images/lavanderia.jpg" alt="Lavanderia">
+            <button onclick="location.href='#'">Scopri di più</button>
+        </div>
+    </div>
 </section>
 
 <section id="orari" class="centered">
-    <h3>Orari di apertura</h3>
-    <p>Lunedì - Sabato: 8:00 - 19:00</p>
-    <p>Domenica: Chiuso</p>
+    <h3 class="fade-in">Orari di apertura</h3>
+    <p class="fade-in">Lunedì - Sabato: 8:00 - 19:00</p>
+    <p class="fade-in">Domenica: Chiuso</p>
 </section>
 
 <section id="galleria" class="centered">
-    <h3>Galleria fotografica</h3>
-    <div class="gallery">
+    <h3 class="fade-in">Galleria fotografica</h3>
+    <div class="gallery fade-in">
         <img src="https://source.unsplash.com/300x200/?carwash" alt="Lavaggio auto 1" />
         <img src="https://source.unsplash.com/301x200/?car-cleaning" alt="Lavaggio auto 2" />
         <img src="https://source.unsplash.com/302x200/?car-detailing" alt="Lucidatura auto" />
@@ -62,17 +85,17 @@
     </div>
 </section>
 
-<section id="prenotazione" class="centered">
+<section id="prenotazione" class="centered fade-in">
     <h3>Prenota il tuo lavaggio</h3>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJY69Ni7ZghMadZz0Wvwa_UwRh0vOP8WfEbzg7rPdLhHOQ4g/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Caricamento…</iframe>
 </section>
 
 <section id="contatti" class="centered">
-    <h3>Contatti</h3>
-    <p>📍 Via Roma 123, Milano</p>
-    <p>📞 +39 02 12345678</p>
-    <p>📧 info@autolavaggiomilano.it</p>
-    <div class="map">
+    <h3 class="fade-in">Contatti</h3>
+    <p class="fade-in">📍 Via Roma 123, Milano</p>
+    <p class="fade-in">📞 +39 02 12345678</p>
+    <p class="fade-in">📧 info@autolavaggiomilano.it</p>
+    <div class="map fade-in">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2788.790672272875!2d8.799984211868757!3d45.655025320565514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478689c459996def%3A0x963eda0d491bf5d0!2sAutolavaggio%20Rapido%20Gallaratese!5e0!3m2!1sit!2sit!4v1754515357257!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
@@ -122,6 +145,23 @@
         hamburger.classList.remove('open');
       }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Rimuove l'osservazione dopo l'animazione
+        }
+      });
+    }, {
+      threshold: 0.3 // Parte quando almeno il 30% è visibile
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  });
 </script>
 
 

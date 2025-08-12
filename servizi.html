@@ -30,16 +30,16 @@
 <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-        <h1>Servizi</h1>
+        <h1 class="fade-in">Servizi</h1>
     </div>
 </section>
 
 <section>
-    <h3>Consulenza</h3>
-    <p>Offriamo consulenza personalizzata per aziende e privati.</p>
+    <h3 class="fade-in">Consulenza</h3>
+    <p class="fade-in">Offriamo consulenza personalizzata per aziende e privati.</p>
 
-    <h3>Sviluppo web</h3>
-    <p>Realizziamo siti web moderni e responsivi.</p>
+    <h3 class="fade-in">Sviluppo web</h3>
+    <p class="fade-in">Realizziamo siti web moderni e responsivi.</p>
 </section>
 
 <footer>
@@ -87,4 +87,21 @@
         hamburger.classList.remove('open');
       }
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Rimuove l'osservazione dopo l'animazione
+        }
+      });
+    }, {
+      threshold: 0.3 // Parte quando almeno il 30% è visibile
+    });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  });
 </script>
