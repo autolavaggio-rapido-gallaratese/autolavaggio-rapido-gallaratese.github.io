@@ -15,8 +15,8 @@ html, body {
 
 img, video, iframe {
   max-width: 100%;
-  height: auto;
   display: block;
+  border: none;
 }
 
 body {
@@ -78,6 +78,7 @@ section h3 {
 }
 
 form {
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -105,7 +106,7 @@ form button:hover {
 
 .map iframe {
   border-radius: 10px;
-  margin-top: 20px;
+  padding: 20px;
 }
 
 footer {
