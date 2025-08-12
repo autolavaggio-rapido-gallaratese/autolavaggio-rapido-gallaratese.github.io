@@ -53,12 +53,6 @@ nav a {
   font-weight: bold;
 }
 
-.hero {
-  background: url('https://images.unsplash.com/photo-1600488995371-3c3f9e3d3d3b') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
 
 section h3 {
   color: #0077b6;
@@ -126,7 +120,21 @@ footer {
 .hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 400px;
+  background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-home {
+  position: relative;
+  width: 100%;
+  height: 700px;
   background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
   background-size: cover;
   background-position: center;
@@ -293,5 +301,19 @@ footer {
 
   .hamburger.open span {
     width: 35px;
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
   }
 }
