@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -215,21 +230,10 @@ footer {
     padding: 10px 20px;
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  #site-header.scrolled #site-logo {
-    height: 60px;
+    z-index: 1100;
   }
 
   #site-logo {
-    height: 60px;
-  }
-
-  #site-header.scrolled .logo img {
-    height: 60px;
-  }
-
-  .logo img {
     height: 60px;
   }
 
@@ -267,6 +271,7 @@ footer {
 
   .hamburger {
     display: flex;
+    z-index: 1100;
   }
 
   .hamburger.open span:nth-child(1) {
