@@ -63,21 +63,17 @@ nav a {
 }
 
 
-section h3 {
+section h2 {
   color: #0077b6;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 }
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  gap: 20px; /* spazio tra gli elementi */
+  justify-content: center;
+  align-items: start;
 }
 
 form {
@@ -129,7 +125,7 @@ footer {
 .hero {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 350px;
   background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
   background-size: cover;
   background-position: center;
@@ -143,7 +139,7 @@ footer {
 .hero-home {
   position: relative;
   width: 100%;
-  height: 700px;
+  height: 800px;
   background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
   background-size: cover;
   background-position: center;
@@ -254,23 +250,25 @@ nav ul li a.active {
 }
 
 .servizio {
-  background-color: white;
-  padding: 20px;
+  padding: 0;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.servizio h4 {
-  margin-bottom: 10px;
+.servizio h3 {
+  margin-bottom: 12px;
+  margin-top: 12px;
   color: #0077b6;
 }
 
 .servizio img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: block;
+  object-fit: cover;
 }
 
 .servizio button {
@@ -281,6 +279,7 @@ nav ul li a.active {
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 12px;
 }
 
 .servizio button:hover {
@@ -288,7 +287,7 @@ nav ul li a.active {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   #site-header {
     padding: 10px 20px;
     flex-direction: row;
@@ -370,4 +369,15 @@ nav ul li a.active {
     color: white;
     text-align: center;
   }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
