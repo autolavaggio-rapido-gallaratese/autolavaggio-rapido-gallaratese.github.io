@@ -336,7 +336,7 @@ nav ul li a.active {
 }
 
 .servizio button {
-  background-color: #0077b6;
+  background-color: #023e8a;
   color: white;
   border: none;
   padding: 10px 40px;
@@ -348,7 +348,7 @@ nav ul li a.active {
 }
 
 .servizio button:hover {
-  background-color: #023e8a;
+  background-color: #0353a4;
 }
 
 .car-care {
