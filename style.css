@@ -134,7 +134,7 @@ footer {
   position: relative;
   width: 100%;
   height: 350px;
-  background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+  background-image: url('images/title-background.webp'); /* Sostituisci con il tuo path */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -148,7 +148,7 @@ footer {
   position: relative;
   width: 100%;
   height: 800px;
-  background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+  background-image: url('images/title-background.webp'); /* Sostituisci con il tuo path */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -563,7 +563,7 @@ nav ul li a.active {
     position: relative;
     width: 100%;
     height: 200px;
-    background-image: url('images/title-background.png'); /* Sostituisci con il tuo path */
+    background-image: url('images/title-background.webp'); /* Sostituisci con il tuo path */
     background-size: cover;
     background-position: center;
     display: flex;
