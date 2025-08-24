@@ -483,6 +483,12 @@ nav ul li a.active {
   background-color: #0353a4;
 }
 
+@media (max-width: 1060px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Mobile styles */
 @media (max-width: 850px) {
   #site-header {
