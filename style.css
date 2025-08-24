@@ -64,6 +64,8 @@ nav a {
 
 
 section h2 {
+  font-size: 2.5em;
+  text-align: center;
   color: #023e8a;
   margin-bottom: 36px;
 }
@@ -338,6 +340,82 @@ nav ul li a.active {
 .servizio button:hover {
   background-color: #023e8a;
 }
+
+.car-care {
+  background-color: #023e8a;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.car-care h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.feature {
+  flex: 1 1 200px;
+  max-width: 220px;
+}
+
+.number {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1.1em;
+}
+
+.laundry-care {
+  color: #023e8a;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.laundry-care h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #023e8a;
+}
+
+.laundry-care .features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+ .laundry-care .feature {
+  flex: 1 1 200px;
+  max-width: 220px;
+}
+
+.laundry-care .number {
+  font-size: 4em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #023e8a;
+}
+
+.laundry-care .description {
+  font-size: 1.1em;
+  color: #023e8a;
+}
+
 
 /* Mobile styles */
 @media (max-width: 850px) {
