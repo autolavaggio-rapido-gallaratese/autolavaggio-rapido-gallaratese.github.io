@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Autolavaggio Rapido Gallaratese</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header id="site-header">
@@ -15,7 +16,15 @@
     <nav class="main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="autolavaggio-tunnel.html" class="active">Servizi</a></li>
+            <li class="has-submenu">
+                <a href="#" class="submenu-toggle active">Servizi</a>
+                <ul class="submenu">
+                    <li><a href="autolavaggio-tunnel.html">Autolavaggio Tunnel</a></li>
+                    <li><a href="autolavaggio-portale.html">Autolavaggio Portale</a></li>
+                    <li><a href="autolavaggio-piste.html">Autolavaggio Piste</a></li>
+                    <li><a href="lavanderia.html">Lavanderia</a></li>
+                </ul>
+            </li>
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
     </nav>
@@ -30,16 +39,34 @@
 <section class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-        <h1 class="fade-in">Servizi</h1>
+        <h1 class="fade-in">Lavanderia</h1>
     </div>
 </section>
 
-<section>
-    <h3 class="fade-in">Consulenza</h3>
-    <p class="fade-in">Offriamo consulenza personalizzata per aziende e privati.</p>
-
-    <h3 class="fade-in">Sviluppo web</h3>
-    <p class="fade-in">Realizziamo siti web moderni e responsivi.</p>
+<section id="servizi-lavanderia" class="centered" style="padding: 30px 20px;">
+    <h3 class="fade-in">Lava e asciuga i tuoi capi in maniera eccelsa</h3>
+    <span class="fade-in">Lun-Dom: 7:30 - 23:30</span>
+    <br>
+    <br>
+    <div class="star-box fade-in">
+        <i class="fas fa-star"></i>
+        <span>Detersivo, ammorbidente e disinfettante erogati autamaticamente</span>
+    </div>
+    <br>
+    <div class="star-box fade-in">
+        <i class="fas fa-star"></i>
+        <span>3 lavatrici da 11kg di carico</span>
+    </div>
+    <br>
+    <div class="star-box fade-in">
+        <i class="fas fa-star"></i>
+        <span>2 lavatrici da 16kg di carico</span>
+    </div>
+    <br>
+    <div class="star-box fade-in">
+        <i class="fas fa-star"></i>
+        <span>6 asciugatrici da 16kg di carico</span>
+    </div>
 </section>
 
 <footer>
@@ -102,6 +129,30 @@
 
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const trigger = document.querySelector(".submenu-toggle");
+  if (!trigger) return;
+
+  const parent = trigger.closest(".has-submenu");
+
+  trigger.addEventListener("click", function (e) {
+    e.preventDefault();
+    parent.classList.toggle("open");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!parent.contains(e.target) && !trigger.contains(e.target)) {
+      parent.classList.remove("open");
+    }
+    });
+  });
+
+  document.querySelectorAll(".submenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        parent.classList.remove("open");
     });
   });
 </script>
